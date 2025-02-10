@@ -1,7 +1,7 @@
 # GlucoPredict
 ![](https://www.cdc.gov/diabetes/images/library/spotlights/diabetes-stats-report-724px.png?_=42420)
 ## Project Overview:
-The primary objective of the Pima Indian Diabetes Prediction project is to analyze various medical factors of female patients, particularly those of Pima Indian heritage and at least 21 years old, to predict whether they have diabetes or not. The dataset used in this project is originally from the National Institute of Diabetes and Digestive and Kidney Diseases, and it includes diagnostic measurements and medical predictor variables.
+The primary objective of this project is to analyze various medical factors of female patients, particularly those of Pima Indian heritage and at least 21 years old, to predict whether they have diabetes or not. The dataset used in this project is originally from the National Institute of Diabetes and Digestive and Kidney Diseases, and it includes diagnostic measurements and medical predictor variables.
 ## About the Dataset:
 The dataset contains medical information from female patients, specifically of Pima Indian heritage, with a focus on diagnosing diabetes. The data includes several medical predictor variables such as Glucose Level, Blood Pressure, Skin Thickness, Insulin Level, number of pregnancies, BMI, age, and more. The target variable, "Outcome," indicates whether the patient has diabetes (1) or does not have diabetes (0). The dataset was carefully selected from a larger database, adhering to certain constraints to maintain accuracy and relevance.
 ### Data Dictionary

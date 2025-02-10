@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+        h1 {
+            color: #ffcc00;
+        }
+        input, button {
+            display: block;
+            width: 95%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #6200ea;
+            color: white;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 20px;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Diabetes Prediction System</h1>
+    <div class="container">
+        <h2>Enter Your Details</h2>
+        <form id="diabetes-form">
+            <input type="number" name="Pregnancies" placeholder="Pregnancies" min="0" max="20" required>
+            <input type="number" name="Glucose" placeholder="Glucose" min="0" max="300" required>
+            <input type="number" name="BloodPressure" placeholder="Blood Pressure" min="0" max="250" required>
+            <input type="number" name="SkinThickness" placeholder="Skin Thickness" min="0" max="100" required>
+            <input type="number" name="Insulin" placeholder="Insulin" min="0" max="1000" required>
+            <input type="number" name="BMI" placeholder="BMI" min="0" max="100" step="0.1" required>
+            <input type="number" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" min="0" max="3" step="0.01" required>
+            <input type="number" name="Age" placeholder="Age" min="0" max="120" required>
+            <button type="submit">Predict</button>
+        </form>
+        <h3 id="result"></h3>
+    </div>
+    <footer>© 2025 Diabetes Prediction System | All Rights Reserved</footer>
+    <script>
+        document.getElementById('diabetes-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.prediction || data.error;
+            });
+        });
+    </script>
+</body>
+</html>
